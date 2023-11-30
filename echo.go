@@ -14,6 +14,16 @@ import (
 	"github.com/spf13/cast"
 )
 
+func SetupEchoGroup(group *echo.Group) *echo.Group {
+	group.GET("/objects", HandleListObjects)
+	group.POST("/objects/:bucket/:key", HandlePutObject)
+	group.PUT("/objects/:bucket/:key", HandlePutObject)
+	group.GET("/objects/:bucket/:key/info", HandleGetObjectInfo, S3ObjectHandler)
+	group.GET("/objects/:bucket/:key", HandleGetObject, S3ObjectHandler)
+	group.DELETE("/objects/:bucket/:key", HandleDeleteObject, S3ObjectHandler)
+	return group
+}
+
 func getS3ObjectFromEchoContext(c echo.Context) *S3Object {
 	if v := c.Get(utils.GetRawTypeName(S3Object{})); v != nil {
 		if object, ok := v.(*S3Object); ok {
