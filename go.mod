@@ -3,7 +3,6 @@ module github.com/heypkg/s3
 go 1.21.4
 
 require (
-	github.com/golang-jwt/jwt/v4 v4.5.0
 	github.com/heypkg/store v0.0.0-20231130021917-c2eef1da462c
 	github.com/labstack/echo/v4 v4.11.3
 	github.com/pkg/errors v0.9.1
@@ -14,6 +13,7 @@ require (
 
 require (
 	github.com/go-sql-driver/mysql v1.7.0 // indirect
+	github.com/golang-jwt/jwt/v5 v5.1.0
 	github.com/golang/snappy v0.0.1 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
