@@ -29,7 +29,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "S3 Objects"
+                    "Objects"
                 ],
                 "summary": "List objects",
                 "operationId": "list-objects",
@@ -99,7 +99,7 @@ const docTemplate = `{
                     "application/octet-stream"
                 ],
                 "tags": [
-                    "S3 Objects"
+                    "Objects"
                 ],
                 "summary": "Download an object from S3",
                 "operationId": "download-object",
@@ -159,7 +159,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "S3 Objects"
+                    "Objects"
                 ],
                 "summary": "Put an object to S3",
                 "operationId": "put-object",
@@ -222,7 +222,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "S3 Objects"
+                    "Objects"
                 ],
                 "summary": "Delete an object from S3",
                 "operationId": "delete-object",
@@ -277,7 +277,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "S3 Objects"
+                    "Objects"
                 ],
                 "summary": "Get information for an object from S3",
                 "operationId": "get-object-info",
@@ -403,16 +403,24 @@ const docTemplate = `{
                 }
             }
         }
+    },
+    "securityDefinitions": {
+        "Bearer": {
+            "description": "Type \"Bearer\" followed by a space and JWT token.",
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
     }
 }`
 
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
-	Version:          "",
-	Host:             "",
-	BasePath:         "",
-	Schemes:          []string{},
-	Title:            "",
+	Version:          "1.0",
+	Host:             "dev.netdoop.com",
+	BasePath:         "/api/v1",
+	Schemes:          []string{"http"},
+	Title:            "S3 API",
 	Description:      "",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,

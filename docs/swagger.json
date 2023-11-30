@@ -1,8 +1,15 @@
 {
+    "schemes": [
+        "http"
+    ],
     "swagger": "2.0",
     "info": {
-        "contact": {}
+        "title": "S3 API",
+        "contact": {},
+        "version": "1.0"
     },
+    "host": "dev.netdoop.com",
+    "basePath": "/api/v1",
     "paths": {
         "/s3/objects": {
             "get": {
@@ -18,7 +25,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "S3 Objects"
+                    "Objects"
                 ],
                 "summary": "List objects",
                 "operationId": "list-objects",
@@ -88,7 +95,7 @@
                     "application/octet-stream"
                 ],
                 "tags": [
-                    "S3 Objects"
+                    "Objects"
                 ],
                 "summary": "Download an object from S3",
                 "operationId": "download-object",
@@ -148,7 +155,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "S3 Objects"
+                    "Objects"
                 ],
                 "summary": "Put an object to S3",
                 "operationId": "put-object",
@@ -211,7 +218,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "S3 Objects"
+                    "Objects"
                 ],
                 "summary": "Delete an object from S3",
                 "operationId": "delete-object",
@@ -266,7 +273,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "S3 Objects"
+                    "Objects"
                 ],
                 "summary": "Get information for an object from S3",
                 "operationId": "get-object-info",
@@ -391,6 +398,14 @@
                     "type": "integer"
                 }
             }
+        }
+    },
+    "securityDefinitions": {
+        "Bearer": {
+            "description": "Type \"Bearer\" followed by a space and JWT token.",
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
         }
     }
 }

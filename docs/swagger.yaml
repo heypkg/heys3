@@ -1,3 +1,4 @@
+basePath: /api/v1
 definitions:
   echo.HTTPError:
     properties:
@@ -52,8 +53,11 @@ definitions:
       Total:
         type: integer
     type: object
+host: dev.netdoop.com
 info:
   contact: {}
+  title: S3 API
+  version: "1.0"
 paths:
   /s3/objects:
     get:
@@ -100,7 +104,7 @@ paths:
       - Bearer: []
       summary: List objects
       tags:
-      - S3 Objects
+      - Objects
   /s3/objects/{bucket}/{key}:
     delete:
       consumes:
@@ -136,7 +140,7 @@ paths:
       - Bearer: []
       summary: Delete an object from S3
       tags:
-      - S3 Objects
+      - Objects
     get:
       consumes:
       - application/json
@@ -176,7 +180,7 @@ paths:
       - Bearer: []
       summary: Download an object from S3
       tags:
-      - S3 Objects
+      - Objects
     post:
       consumes:
       - multipart/form-data
@@ -218,7 +222,7 @@ paths:
       - Bearer: []
       summary: Put an object to S3
       tags:
-      - S3 Objects
+      - Objects
   /s3/objects/{bucket}/{key}/info:
     get:
       consumes:
@@ -256,5 +260,13 @@ paths:
       - Bearer: []
       summary: Get information for an object from S3
       tags:
-      - S3 Objects
+      - Objects
+schemes:
+- http
+securityDefinitions:
+  Bearer:
+    description: Type "Bearer" followed by a space and JWT token.
+    in: header
+    name: Authorization
+    type: apiKey
 swagger: "2.0"

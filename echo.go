@@ -14,6 +14,15 @@ import (
 	"github.com/spf13/cast"
 )
 
+// @title S3 API
+// @version 1.0
+// @host dev.netdoop.com
+// @BasePath /api/v1
+// @schemes http
+// @securityDefinitions.apikey Bearer
+// @in header
+// @name Authorization
+// @description Type "Bearer" followed by a space and JWT token.
 func SetupEchoGroup(group *echo.Group) *echo.Group {
 	group.GET("/objects", HandleListObjects)
 	group.POST("/objects/:bucket/:key", HandlePutObject)
@@ -57,7 +66,7 @@ type listS3ObjectsData struct {
 }
 
 // @Summary List objects
-// @Tags S3 Objects
+// @Tags Objects
 // @ID list-objects
 // @Accept json
 // @Produce json
@@ -81,7 +90,7 @@ func HandleListObjects(c echo.Context) error {
 }
 
 // @Summary Put an object to S3
-// @Tags S3 Objects
+// @Tags Objects
 // @ID put-object
 // @Accept multipart/form-data
 // @Produce json
@@ -134,7 +143,7 @@ func HandlePutObject(c echo.Context) error {
 }
 
 // @Summary Delete an object from S3
-// @Tags S3 Objects
+// @Tags Objects
 // @ID delete-object
 // @Accept json
 // @Produce json
@@ -152,7 +161,7 @@ func HandleDeleteObject(c echo.Context) error {
 }
 
 // @Summary Get information for an object from S3
-// @Tags S3 Objects
+// @Tags Objects
 // @ID get-object-info
 // @Accept json
 // @Produce json
@@ -169,7 +178,7 @@ func HandleGetObjectInfo(c echo.Context) error {
 }
 
 // @Summary Download an object from S3
-// @Tags S3 Objects
+// @Tags Objects
 // @ID download-object
 // @Accept json
 // @Produce octet-stream
