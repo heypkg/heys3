@@ -13,7 +13,7 @@ import (
 var defaultServerMutex sync.Mutex
 var defaultServer *S3Server
 
-func SetupwMongoStorage(db *gorm.DB, mdb *mongo.Database) {
+func SetupMongoStorage(db *gorm.DB, mdb *mongo.Database) {
 	logger := zap.L().Named("s3")
 
 	if db == nil {
@@ -28,7 +28,7 @@ func SetupwMongoStorage(db *gorm.DB, mdb *mongo.Database) {
 	defaultServer = NewMongoStorageServer(db, mdb)
 }
 
-func SetupwFileStorage(db *gorm.DB, dir string) {
+func SetupFileStorage(db *gorm.DB, dir string) {
 	logger := zap.L().Named("s3")
 
 	if db == nil {
