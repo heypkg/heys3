@@ -7,6 +7,8 @@ import (
 	"github.com/pkg/errors"
 )
 
+const defaultSecret = "heypkg2023!!"
+
 type AccessClaims struct {
 	jwt.RegisteredClaims
 	AccessKey string `json:"ak,omitempty"`

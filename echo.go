@@ -80,7 +80,7 @@ type listS3ObjectsData struct {
 // @Failure 500 {object} echo.HTTPError "Internal server error"
 // @Router /s3/objects [GET]
 func HandleListObjects(c echo.Context) error {
-	db := defaultDatabase
+	db := getDefaultServer().GetDB()
 	data, total, err := echohandler.ListObjects[S3Object](db, c, nil, nil)
 	if err != nil {
 		return echo.NewHTTPError(http.StatusInternalServerError, err.Error())
