@@ -3,7 +3,7 @@ module github.com/heypkg/s3
 go 1.21.4
 
 require (
-	github.com/heypkg/store v0.0.0-20231130021917-c2eef1da462c
+	github.com/heypkg/store v0.1.0-dev
 	github.com/labstack/echo/v4 v4.11.3
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/cast v1.6.0
