@@ -1,1 +1,0 @@
-swag init --parseDependency  --generalInfo ./s3.go
