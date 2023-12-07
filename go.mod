@@ -27,7 +27,7 @@ require (
 	github.com/go-sql-driver/mysql v1.7.0 // indirect
 	github.com/golang-jwt/jwt/v5 v5.1.0 // indirect
 	github.com/golang/snappy v0.0.1 // indirect
-	github.com/heypkg/iam v0.2.21-dev
+	github.com/heypkg/iam v0.2.22-dev
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/klauspost/compress v1.13.6 // indirect
