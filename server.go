@@ -26,23 +26,25 @@ type S3Server struct {
 	storageDir  string
 }
 
-func NewMongoStorageServer(db *gorm.DB, mdb *mongo.Database) *S3Server {
+func NewMongoStorageServer(db *gorm.DB, mdb *mongo.Database, secret string) *S3Server {
 	s := S3Server{
 		logger:      zap.L().Named("s3"),
 		storageType: "mongo",
 		db:          db,
 		mdb:         mdb,
 	}
+	defaultSecret = secret
 	return &s
 }
 
-func NewFileStorageServer(db *gorm.DB, dir string) *S3Server {
+func NewFileStorageServer(db *gorm.DB, dir string, secret string) *S3Server {
 	s := S3Server{
 		logger:      zap.L().Named("s3"),
 		storageType: "fs",
 		db:          db,
 		storageDir:  dir,
 	}
+	defaultSecret = secret
 	return &s
 }
 

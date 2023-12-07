@@ -11,12 +11,23 @@ require (
 	gorm.io/gorm v1.25.5
 )
 
-require go.uber.org/multierr v1.10.0 // indirect
+require (
+	github.com/Blank-Xu/sqlx-adapter v0.0.0-20230423090211-0a30309eefa6 // indirect
+	github.com/casbin/casbin/v2 v2.79.0 // indirect
+	github.com/casbin/govaluate v1.1.0 // indirect
+	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
+	github.com/jmoiron/sqlx v1.3.5 // indirect
+	github.com/labstack/echo-jwt/v4 v4.2.0 // indirect
+	github.com/lib/pq v1.10.9 // indirect
+	go.uber.org/multierr v1.10.0 // indirect
+	golang.org/x/time v0.3.0 // indirect
+)
 
 require (
 	github.com/go-sql-driver/mysql v1.7.0 // indirect
-	github.com/golang-jwt/jwt/v5 v5.1.0
+	github.com/golang-jwt/jwt/v5 v5.1.0 // indirect
 	github.com/golang/snappy v0.0.1 // indirect
+	github.com/heypkg/iam v0.2.21-dev
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/klauspost/compress v1.13.6 // indirect

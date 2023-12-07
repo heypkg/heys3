@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/heypkg/iam"
 	"github.com/heypkg/store/jsontype"
 	"github.com/heypkg/store/utils"
 	"gorm.io/gorm"
@@ -51,9 +52,11 @@ func CreateAccessKey(schema string, bucket string, key string) string {
 	return utils.CRC32(raw)
 }
 
+var defaultSecret = "heypkg2023!!"
+
 func MakeUrl(schema string, bucket string, key string) string {
 	accessKey := CreateAccessKey(schema, bucket, key)
-	token, err := CreateAccessToken("", accessKey, time.Hour)
+	token, err := iam.CreateAccessToken(defaultSecret, accessKey, time.Hour)
 	if err != nil {
 		return ""
 	}
