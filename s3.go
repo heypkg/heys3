@@ -14,7 +14,6 @@ var defaultServerMutex sync.Mutex
 var defaultServer *S3Server
 
 func SetupMongoStorage(db *gorm.DB, mdb *mongo.Database, secret string) {
-	defaultSecret = secret
 	logger := zap.L().Named("s3")
 
 	if db == nil {
@@ -26,11 +25,10 @@ func SetupMongoStorage(db *gorm.DB, mdb *mongo.Database, secret string) {
 
 	defaultServerMutex.Lock()
 	defer defaultServerMutex.Unlock()
-	defaultServer = NewMongoStorageServer(db, mdb)
+	defaultServer = NewMongoStorageServer(db, mdb, secret)
 }
 
 func SetupFileStorage(db *gorm.DB, dir string, secret string) {
-	defaultSecret = secret
 	logger := zap.L().Named("s3")
 
 	if db == nil {
@@ -39,7 +37,7 @@ func SetupFileStorage(db *gorm.DB, dir string, secret string) {
 
 	defaultServerMutex.Lock()
 	defer defaultServerMutex.Unlock()
-	defaultServer = NewFileStorageServer(db, dir)
+	defaultServer = NewFileStorageServer(db, dir, secret)
 }
 
 func getDefaultServer() *S3Server {
