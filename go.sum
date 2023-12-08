@@ -29,8 +29,12 @@ github.com/heypkg/iam v0.2.21-dev h1:xJJF8Vr1yKEnvXIyKBRsHMJ/VrLd7LZmz5tB4XO95Hk
 github.com/heypkg/iam v0.2.21-dev/go.mod h1:cX0sP9AMxglDKNWL5aKsroaXX1vXoitQEGnI3b9ehk0=
 github.com/heypkg/iam v0.2.22-dev h1:TKzaZyQxIpld7FaW4jezE8+etsHUYa15w58TNYpBRzQ=
 github.com/heypkg/iam v0.2.22-dev/go.mod h1:cX0sP9AMxglDKNWL5aKsroaXX1vXoitQEGnI3b9ehk0=
+github.com/heypkg/iam v0.2.22 h1:o0kXv2XGTR1R9vSh++6/hG8yUdzjHh7pqZQONiC5aWQ=
+github.com/heypkg/iam v0.2.22/go.mod h1:RorK4/SPLzA+s0B5E6LvF+5MuQgOCHEwL/6s3P9VKFk=
 github.com/heypkg/store v0.1.0-dev h1:PgUQT1ex9NO/cdZxFrh6pyfwj3QDzu6DafGkhYRMhgk=
 github.com/heypkg/store v0.1.0-dev/go.mod h1:WDMEuopEx/23ED14fJqBYA+WvUvYskMKGn3rwXZykx4=
+github.com/heypkg/store v0.1.0 h1:slpsszcWryQSDZOeQ3T6+AxUKfdX0DG4Keck6N4dDkc=
+github.com/heypkg/store v0.1.0/go.mod h1:WDMEuopEx/23ED14fJqBYA+WvUvYskMKGn3rwXZykx4=
 github.com/jinzhu/inflection v1.0.0 h1:K317FqzuhWc8YvSVlFMCCUb36O/S9MCKRDI7QkRKD/E=
 github.com/jinzhu/inflection v1.0.0/go.mod h1:h+uFLlag+Qp1Va5pdKtLDYj+kHp5pxUVkryuEj+Srlc=
 github.com/jinzhu/now v1.1.5 h1:/o9tlHleP7gOFmsnYNz3RGnqzefHA47wQpKrrdTIwXQ=
